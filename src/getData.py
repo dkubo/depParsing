@@ -25,8 +25,9 @@ def fild_all_files(directory):
 if __name__ == '__main__':
 	sentID=1		#文に割り当てるid
 	bunsetsu=""
-	bunsetsuArr=[]
+	bunsetsuHash={}
 	sentenceHash={}
+	
 #	for file in fild_all_files(ROOT_DIR):		#ファイル再帰オープン
 	file=ROOT_DIR+'950101.KNP'							#まずは1月1日のみを対象とする
 	matchOB=re.search(r'KNP$',file)
@@ -42,7 +43,7 @@ if __name__ == '__main__':
 				elif arr[0] == '*':
 					bunsetsuID = arr[1]
 					if bunsetsu != '':
-						bunsetsuArr.append(bunsetsu)
+						bunsetsuHash[bunsetsuID]=bunsetsu
 					bunsetsu = ""
 				elif arr[0] == 'EOS':
 					print(sentID)
