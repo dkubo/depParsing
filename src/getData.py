@@ -30,7 +30,7 @@ if __name__ == '__main__':
 				for line in f:
 					arr=line.split()
 #					print(arr)
-					if arr[0] == '#':
+					if arr[0] == '*':
 						print(line)
 
 
